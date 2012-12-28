@@ -4,7 +4,6 @@ import io.sunstrike.corestrike.CoreLogger.LogLevel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Locale.Category;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
@@ -50,6 +49,21 @@ public class CorestrikeLib extends DummyModContainer {
 	 * @see io.sunstrike.corestrike.CoreLogger
 	 */
 	public static CoreLogger logger = new CoreLogger(LogLevel.DEBUG);
+	
+	/**
+	 * Mod constructor.
+	 * 
+	 * Builds the base mod and provides metadata.
+	 */
+	public CorestrikeLib() {
+		super(new ModMetadata());
+		ModMetadata meta = super.getMetadata();
+		meta.authorList = Arrays.asList(new String[] {"Sunstrike"});
+		meta.description = "Coremod library for Forge";
+		meta.modId = "CorestrikeLib";
+		meta.version = "0.0.1";
+		meta.name = "CorestrikeLib";
+	}
 	
 	/**
 	 * Standard registration for FML mod event bus.

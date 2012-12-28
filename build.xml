@@ -149,13 +149,11 @@
 			</fileset>
 		</copy>
 
-		<!-- Copy resources -->
-		<copy todir="${classes.dir}">
-			<fileset dir="resources">
-				<exclude name="build.xml"/>
-				<exclude name="build.number"/>
-			</fileset>
-		</copy>
+		<!-- Copy AT config -->
+        <copy file="${src.dir}/corestr_at.cfg" todir="${classes.dir}" />
+
+		<!-- Copy mcmod.info to root -->
+		<copy file="mcmod.info" todir="${classes.dir}" />
 
 	</target>
 
