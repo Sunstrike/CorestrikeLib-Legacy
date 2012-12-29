@@ -162,7 +162,7 @@
 
 		<delete dir="${jar.dir}"/>
 		<mkdir dir="${jar.dir}"/>
-		<jar destfile="${jar.dir}/CorestrikeLib-${cl.version.full}.jar" basedir="${classes.dir}"/>
+		<jar destfile="${jar.dir}/CorestrikeLib-${cl.version.full}.jar" basedir="${classes.dir}" manifest="${src.dir}/MANIFEST.MF"/>
 
 	</target>
 
