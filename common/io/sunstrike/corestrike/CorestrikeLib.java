@@ -80,25 +80,13 @@ public class CorestrikeLib extends DummyModContainer {
 	/**
 	 * FML preinitializer.
 	 * 
+	 * Grab configs here
+	 * 
 	 * @param event FML Preinit event
 	 */
 	@Subscribe
 	public void preInit(FMLPreInitializationEvent event) {
-		
-	}
-
-	/**
-	 * FML initializer.
-	 * 
-	 * Grab config here
-	 * 
-	 * @see io.sunstrike.corestrike.CommonProxy
-	 * @see io.sunstrike.corestrike.ClientProxy
-	 * @param event FML Init event
-	 */
-	@Subscribe
-	public void load(FMLInitializationEvent event) {
-		Configuration config = new Configuration();
+		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 		config.addCustomCategoryComment(Configuration.CATEGORY_GENERAL, "LogLevel IDs: 4=DEBUG, 3=VERBOSE, 2=INFO, 1=SPARSE");
 		int logLvl = config.get(Configuration.CATEGORY_GENERAL, "LogLevel", 4).getInt(4);
@@ -117,6 +105,18 @@ public class CorestrikeLib extends DummyModContainer {
 			logger.setLogLevel(LogLevel.SPARSE);
 			break;
 		}
+	}
+
+	/**
+	 * FML initializer.
+	 * 
+	 * @see io.sunstrike.corestrike.CommonProxy
+	 * @see io.sunstrike.corestrike.ClientProxy
+	 * @param event FML Init event
+	 */
+	@Subscribe
+	public void load(FMLInitializationEvent event) {
+		
 	}
 
 	/**
