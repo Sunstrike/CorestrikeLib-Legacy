@@ -67,10 +67,8 @@
 	</target>
 
 	<!-- Setup mcp and forge -->
-	<target name="setup" depends="download-files,clean" if="out-of-date">
+	<target name="setup" depends="clean,download-files">
 	
-		<delete dir="${build.dir}"/>
-
 		<!-- Unzip them -->
 		<unzip dest="${build.dir}" src="${download.dir}/${forge.name}"/>
 
