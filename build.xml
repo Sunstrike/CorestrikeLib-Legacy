@@ -67,7 +67,7 @@
 	</target>
 
 	<!-- Setup mcp and forge -->
-	<target name="setup" depends="download-files" if="out-of-date">
+	<target name="setup" depends="download-files,clean" if="out-of-date">
 	
 		<delete dir="${build.dir}"/>
 
